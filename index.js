@@ -10,13 +10,15 @@ var i = 0;
 var addressAndPriv = [];
 var addressOnly = [];
 
-while (i < 1002) {
+while (i < 1) {
 
     // Generate Ethereum address Keypairs
     var id = crypto.randomBytes(32).toString('hex');
     var privateKey = "0x"+id;
     var wallet = new ethers.Wallet(privateKey);
     console.log("Create Address " + i + " " + wallet.address);
+    
+    console.log(wallet.address +privateKey +".");
 
     // Add to collection;
     addressAndPriv.push({address: wallet.address, privateKey: privateKey});
